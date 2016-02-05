@@ -7,7 +7,7 @@
   <version>1.1</version>
   <packaging>jar</packaging>
 
-  <name>ex4</name>
+  <name>exFeb</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -28,10 +28,13 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-<profiles>
-  <profile>
-    <id>P1</id>
+  <activation>
+	<os>
+		<family>windows</family>
+	</os>
+</activation>
 <build>
+	<directory>${project.basedir}/target/Windows/</directory>
 	<plugins>
   		<!-- Make this jar executable -->
 		<plugin>
@@ -45,7 +48,7 @@
 				  	<addClasspath>true</addClasspath>
             <classpathPrefix> dependencias/</classpathPrefix>
 					<!-- Jar file entry point -->
-					<mainClass>myApp_${project.artifactId}</mainClass>
+					<mainClass>${project.groupId}.App</mainClass>
 				</manifest>
 			  </archive>
 			</configuration>
@@ -70,6 +73,4 @@
       </plugin>
 	</plugins>
   </build>
-  </profile>
-  </profiles>
 </project>
