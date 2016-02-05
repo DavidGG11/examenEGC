@@ -28,11 +28,7 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <activation>
-	<os>
-		<family>windows</family>
-	</os>
-</activation>
+
 <build>
 	<directory>${project.basedir}/target/Windows/</directory>
 	<plugins>
